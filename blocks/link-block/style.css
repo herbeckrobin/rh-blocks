@@ -1,0 +1,29 @@
+/* Link-Block: Group-artiger Container, komplett verlinkt.
+   Lädt im Frontend UND Editor-Iframe (block.json "style"). */
+
+/* Modus 1: der Wrapper selbst ist das <a> (Inhalt ohne eigene Links).
+   Link-Optik neutralisieren, der Block soll aussehen wie eine Gruppe. */
+a.wp-block-rh-link-block {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Modus 2: Inhalt enthält eigene Links/Buttons -> <div> + Stretched-Link.
+   Innere Links/Buttons liegen per z-index über dem Flächen-Link und
+   bleiben eigenständig klickbar. */
+.wp-block-rh-link-block.has-overlay-link {
+	position: relative;
+}
+
+.rh-link-block__overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+}
+
+.wp-block-rh-link-block.has-overlay-link a:not(.rh-link-block__overlay),
+.wp-block-rh-link-block.has-overlay-link button {
+	position: relative;
+	z-index: 3;
+}

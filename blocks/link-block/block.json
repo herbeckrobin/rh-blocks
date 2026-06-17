@@ -1,0 +1,98 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rh/link-block",
+	"version": "0.1.0",
+	"title": "Link-Block",
+	"category": "rh-blocks",
+	"icon": "admin-links",
+	"description": "Wie eine Gruppe, nur verlinkt: die gesamte Fläche (z.B. eine Card) wird klickbar. Innere Links und Buttons funktionieren weiter.",
+	"textdomain": "rh-blocks",
+	"attributes": {
+		"url": { "type": "string", "default": "" },
+		"opensInNewTab": { "type": "boolean", "default": false }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"anchor": true,
+		"ariaLabel": true,
+		"background": {
+			"backgroundImage": true,
+			"backgroundSize": true
+		},
+		"color": {
+			"gradients": true,
+			"heading": true,
+			"button": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true
+			}
+		},
+		"shadow": true,
+		"spacing": {
+			"margin": [ "top", "bottom" ],
+			"padding": true,
+			"blockGap": true,
+			"__experimentalDefaultControls": {
+				"padding": true,
+				"blockGap": true
+			}
+		},
+		"dimensions": {
+			"minHeight": true
+		},
+		"border": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+		"position": {
+			"sticky": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
+		"layout": {
+			"allowSizingOnChildren": true
+		},
+		"interactivity": {
+			"clientNavigation": true
+		}
+	},
+	"example": {
+		"attributes": { "url": "#" },
+		"innerBlocks": [
+			{ "name": "core/heading", "attributes": { "level": 3, "content": "Klickbare Card" } },
+			{ "name": "core/paragraph", "attributes": { "content": "Die gesamte Fläche ist verlinkt." } }
+		]
+	},
+	"editorScript": "rh-link-block-editor",
+	"style": "rh-link-block",
+	"render": "file:./render.php"
+}
