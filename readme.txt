@@ -4,7 +4,7 @@ Tags: blocks, gutenberg, link, card, clickable
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Buildless: registered via block.json server-side, edited via window.wp.* in the 
 Part of the rh-blueprint collection.
 
 == Changelog ==
+
+= 0.1.4 =
+* Fix: bundle core 2.6.1. The 2.6.0 release bundled an incomplete core.
 
 = 0.1.3 =
 * Internal: shared building blocks from core 2.6.0. The update check no longer loads on regular front-end requests.
