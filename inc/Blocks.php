@@ -36,7 +36,8 @@ final class Blocks
 
         array_unshift($categories, [
             'slug' => self::CATEGORY,
-            'title' => __('RH Blöcke', 'rh-blocks'),
+            /* translators: %s: Markenname, Standard "RH" */
+            'title' => sprintf(__('%s Blöcke', 'rh-blocks'), (function_exists('rhbp_brand') ? rhbp_brand('name', 'RH') : 'RH')),
             'icon' => null,
         ]);
 
